@@ -247,6 +247,10 @@
         }
 
         /* AGENDAMENTO */
+        .mobile-step-tabs {
+            display: none;
+        }
+
         .booking-wrapper {
             background: var(--color-charcoal);
             border: 1px solid rgba(156, 141, 92, 0.22);
@@ -782,7 +786,7 @@
                 font-size: 1.45rem;
             }
 
-            /* AGENDAMENTO MOBILE: CURTO NA ALTURA E LARGO NAS COLUNAS */
+            /* AGENDAMENTO MOBILE ULTRA COMPACTO (ABAS + BARRA ÚNICA) */
             #agendamento.section-container {
                 padding: 10px 4px;
             }
@@ -792,70 +796,90 @@
             }
 
             #agendamento .section-title h2 {
-                font-size: 1.12rem;
-                margin-bottom: 1px;
+                font-size: 1.08rem;
+                margin-bottom: 0;
             }
 
             #agendamento .section-title p {
-                font-size: 0.68rem;
+                display: none;
             }
 
             .booking-wrapper {
-                padding: 8px 6px;
+                padding: 7px 6px;
                 gap: 6px;
                 border-radius: 10px;
             }
 
-            .booking-step {
+            .mobile-step-tabs {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4px;
                 margin-bottom: 6px;
             }
 
+            .mobile-tab-btn {
+                background: var(--color-bg-dark);
+                border: 1px solid rgba(232, 232, 232, 0.08);
+                color: var(--color-text-muted);
+                font-size: 0.7rem;
+                font-weight: 700;
+                padding: 5px 4px;
+                border-radius: 6px;
+                cursor: pointer;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            .mobile-tab-btn.active {
+                background: rgba(156, 141, 92, 0.2);
+                border-color: var(--color-gold-olive);
+                color: var(--color-ice-white);
+            }
+
+            .booking-step {
+                display: none;
+                margin-bottom: 0;
+            }
+
+            .booking-step.active-mobile-step {
+                display: block;
+            }
+
             .step-header {
-                gap: 5px;
-                margin-bottom: 4px;
-            }
-
-            .step-number {
-                width: 16px;
-                height: 16px;
-                font-size: 0.64rem;
-            }
-
-            .step-header h3 {
-                font-size: 0.78rem;
+                display: none;
             }
 
             .booking-services-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 4px;
+                gap: 5px;
             }
 
             .service-option {
-                padding: 4px 8px;
-                min-height: 28px;
+                padding: 6px 8px;
+                min-height: 32px;
                 border-radius: 6px;
                 gap: 4px;
             }
 
             .service-option-info h4 {
-                font-size: 0.72rem;
+                font-size: 0.73rem;
                 line-height: 1.1;
             }
 
             .service-option-price {
-                font-size: 0.72rem;
+                font-size: 0.73rem;
                 margin-left: 0;
             }
 
             .dates-scroller {
                 gap: 4px;
-                margin-bottom: 4px;
+                margin-bottom: 5px;
                 padding-bottom: 2px;
             }
 
             .date-pill {
-                min-width: 58px;
-                padding: 3px 6px;
+                min-width: 56px;
+                padding: 3px 5px;
                 border-radius: 6px;
             }
 
@@ -865,7 +889,7 @@
             }
 
             .date-pill .day-num {
-                font-size: 0.76rem;
+                font-size: 0.75rem;
                 line-height: 1.15;
                 margin-top: 0;
             }
@@ -877,16 +901,16 @@
 
             .time-slot {
                 padding: 3px 2px;
-                min-height: 23px;
-                height: 23px;
+                min-height: 24px;
+                height: 24px;
                 font-size: 0.7rem;
-                border-radius: 6px;
+                border-radius: 5px;
                 line-height: 1;
             }
 
             .client-inputs {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 4px;
+                gap: 5px;
             }
 
             .input-group {
@@ -902,70 +926,85 @@
                 padding: 4px 7px;
                 font-size: 12px;
                 border-radius: 6px;
-                height: 26px;
-                min-height: 26px;
+                height: 28px;
+                min-height: 28px;
             }
 
+            /* Resumo em uma única linha curta */
             .booking-summary {
                 padding: 6px 8px;
                 border-radius: 8px;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
             }
 
-            .booking-summary h3 {
+            .booking-summary h3,
+            .summary-services-list,
+            .booking-feedback {
                 display: none;
             }
 
+            .booking-summary > div:first-child {
+                display: flex;
+                flex-direction: column;
+                gap: 1px;
+                min-width: 0;
+                flex: 1;
+            }
+
             .summary-row {
-                margin-bottom: 2px;
-                font-size: 0.66rem;
-                line-height: 1.2;
-            }
-
-            .summary-services-list {
-                padding: 4px 6px;
-                margin: 4px 0;
-                min-height: 20px;
-                border-radius: 6px;
-            }
-
-            .summary-services-list p {
+                margin-bottom: 0;
                 font-size: 0.64rem;
                 line-height: 1.15;
+                justify-content: flex-start;
+                gap: 4px;
             }
 
-            .summary-service-item {
-                font-size: 0.68rem;
-                margin-bottom: 1px;
-                line-height: 1.15;
+            .summary-row strong {
+                text-align: left;
+                max-width: none;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .booking-summary > div:last-child {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-shrink: 0;
             }
 
             .summary-total-box {
-                padding-top: 4px;
-                margin-bottom: 5px;
+                border-top: none;
+                padding-top: 0;
+                margin-bottom: 0;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 0;
             }
 
             .summary-total-box span {
-                font-size: 0.68rem;
+                font-size: 0.58rem;
+                line-height: 1;
             }
 
             .summary-total-box strong {
-                font-size: 0.96rem;
+                font-size: 0.9rem;
+                line-height: 1.1;
             }
 
             .btn-confirm-booking {
-                padding: 5px 8px;
+                width: auto;
+                padding: 0 10px;
                 min-height: 30px;
                 height: 30px;
-                font-size: 0.74rem;
+                font-size: 0.72rem;
                 border-radius: 6px;
-                gap: 5px;
-            }
-
-            .booking-feedback {
-                margin-top: 2px;
-                font-size: 0.62rem;
-                min-height: 10px;
-                line-height: 1.1;
+                gap: 4px;
+                white-space: nowrap;
             }
 
             .contact-card {
@@ -1067,7 +1106,13 @@
 
         <div class="booking-wrapper">
             <div class="booking-steps">
-                <div class="booking-step">
+                <div class="mobile-step-tabs" id="mobile-step-tabs">
+                    <button type="button" class="mobile-tab-btn active" data-step="0">1. Serviço</button>
+                    <button type="button" class="mobile-tab-btn" data-step="1">2. Data/Hora</button>
+                    <button type="button" class="mobile-tab-btn" data-step="2">3. Seus Dados</button>
+                </div>
+
+                <div class="booking-step active-mobile-step">
                     <div class="step-header">
                         <div class="step-number">1</div>
                         <h3>Serviços</h3>
@@ -1165,7 +1210,7 @@
                     </div>
 
                     <button type="button" id="btn-confirm-booking" class="btn-confirm-booking" disabled>
-                        <i class="fa-brands fa-whatsapp"></i> Confirmar no WhatsApp
+                        <i class="fa-brands fa-whatsapp"></i> Confirmar
                     </button>
                     <div class="booking-feedback" id="booking-feedback"></div>
                 </div>
@@ -1290,6 +1335,21 @@
                 lastTouchEnd = now;
             }, { passive: false });
 
+            // Controle das abas mobile
+            const tabBtns = document.querySelectorAll('.mobile-tab-btn');
+            const bookingSteps = document.querySelectorAll('.booking-step');
+
+            function setActiveMobileStep(index) {
+                tabBtns.forEach((b, i) => b.classList.toggle('active', i === index));
+                bookingSteps.forEach((s, i) => s.classList.toggle('active-mobile-step', i === index));
+            }
+
+            tabBtns.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    setActiveMobileStep(Number(btn.dataset.step));
+                });
+            });
+
             const WHATSAPP_NUMBER = "551155395678";
             const state = {
                 services: [],
@@ -1383,6 +1443,9 @@
                         state.time = timeStr;
                         summaryTime.textContent = timeStr;
                         updateSummary();
+                        if (window.innerWidth <= 768) {
+                            setActiveMobileStep(2);
+                        }
                     });
 
                     timesContainer.appendChild(btn);
