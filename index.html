@@ -25,7 +25,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent;
             touch-action: manipulation;
         }
@@ -37,136 +36,6 @@
             position: relative;
             touch-action: pan-y;
             -webkit-text-size-adjust: 100%;
-        }
-
-        #bg-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            z-index: -2;
-        }
-
-        .glow-orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(110px);
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0.14;
-        }
-
-        .orb-1 {
-            top: -100px;
-            left: 50%;
-            width: 560px;
-            height: 560px;
-            background: radial-gradient(circle, rgba(156, 141, 92, 0.8) 0%, rgba(0,0,0,0) 70%);
-            transform: translateX(-50%);
-        }
-
-        .orb-2 {
-            bottom: -150px;
-            right: 10%;
-            width: 460px;
-            height: 460px;
-            background: radial-gradient(circle, rgba(156, 141, 92, 0.6) 0%, rgba(0,0,0,0) 70%);
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideFromLeft {
-            0% {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* INTRO RÁPIDA */
-        #intro-screen {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            background: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            overflow: hidden;
-            transition: opacity 0.25s ease, visibility 0.25s ease;
-        }
-
-        #intro-screen.fade-out {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .open-stage {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 22px;
-            text-align: center;
-        }
-
-        .open-item {
-            position: absolute;
-            font-weight: 800;
-            opacity: 0;
-            will-change: opacity, transform;
-        }
-
-        .open-item--1 {
-            font-size: clamp(2.4rem, 10vw, 5.2rem);
-            text-transform: uppercase;
-            color: var(--color-gold-olive);
-            animation: fastIntroItem 0.42s ease 0.02s forwards;
-        }
-
-        .open-item--2 {
-            font-size: clamp(2.1rem, 9vw, 4.6rem);
-            text-transform: uppercase;
-            color: var(--color-ice-white);
-            animation: fastIntroItem 0.42s ease 0.34s forwards;
-        }
-
-        .open-item--3 {
-            max-width: 780px;
-            padding: 0 18px;
-            font-size: clamp(1.35rem, 4.8vw, 2.5rem);
-            line-height: 1.2;
-            color: var(--color-ice-white);
-            animation: fastIntroHold 0.52s ease 0.66s forwards;
-        }
-
-        .open-item--3 span {
-            color: var(--color-gold-olive);
-        }
-
-        @keyframes fastIntroItem {
-            0% { opacity: 0; transform: scale(0.96); }
-            35% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(1.02); }
-        }
-
-        @keyframes fastIntroHold {
-            0% { opacity: 0; transform: scale(0.97); }
-            45% { opacity: 1; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1); }
         }
 
         /* BOTÃO FLUTUANTE WHATSAPP DIREITA */
@@ -185,13 +54,7 @@
             font-size: 1.75rem;
             text-decoration: none;
             z-index: 950;
-            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-
-        .whatsapp-float:hover {
-            background: #20bd5a;
-            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
         }
 
         /* NAVBAR */
@@ -200,7 +63,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 16px 8%;
-            background: rgba(18, 18, 18, 0.94);
+            background: rgba(18, 18, 18, 0.96);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -229,7 +92,6 @@
             text-decoration: none;
             font-size: 0.92rem;
             font-weight: 600;
-            transition: 0.25s;
         }
 
         .nav-links a:hover {
@@ -244,21 +106,16 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
-            transition: 0.25s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             white-space: nowrap;
         }
 
-        .btn-header:hover {
-            background: var(--color-gold-hover);
-        }
-
         /* HERO */
         .hero {
             text-align: center;
-            padding: 76px 20px 64px;
+            padding: 72px 20px 56px;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -275,7 +132,6 @@
             font-size: 0.82rem;
             font-weight: 600;
             margin-bottom: 20px;
-            animation: fadeInUp 0.45s ease both;
         }
 
         .hero h1 {
@@ -284,7 +140,6 @@
             font-weight: 800;
             color: var(--color-ice-white);
             margin-bottom: 18px;
-            animation: fadeInUp 0.5s ease 0.08s both;
         }
 
         .hero h1 span {
@@ -296,7 +151,6 @@
             font-size: 1.12rem;
             margin-bottom: 30px;
             line-height: 1.55;
-            animation: fadeInUp 0.5s ease 0.14s both;
         }
 
         .hero-actions {
@@ -304,7 +158,6 @@
             justify-content: center;
             gap: 14px;
             flex-wrap: wrap;
-            animation: fadeInUp 0.5s ease 0.2s both;
         }
 
         .btn-main {
@@ -321,12 +174,6 @@
             font-size: 1rem;
             border: none;
             cursor: pointer;
-            transition: transform 0.25s ease, background-color 0.25s ease;
-        }
-
-        .btn-main:hover {
-            background: var(--color-gold-hover);
-            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -342,44 +189,17 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 0.98rem;
-            transition: 0.25s;
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--color-gold-olive);
-            background: rgba(156, 141, 92, 0.1);
-            color: var(--color-gold-olive);
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(22px);
-            transition: opacity 0.45s ease, transform 0.45s ease;
-        }
-
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .space-item.slide-left-card {
-            opacity: 0;
-            transform: translateX(-28px);
-        }
-
-        .space-item.slide-left-card.is-visible {
-            animation: slideFromLeft 0.45s ease forwards;
         }
 
         .section-container {
             max-width: 1120px;
             margin: 0 auto;
-            padding: 64px 18px;
+            padding: 60px 18px;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 38px;
+            margin-bottom: 36px;
         }
 
         .section-title h2 {
@@ -391,50 +211,6 @@
         .section-title p {
             color: var(--color-text-muted);
             font-size: 0.98rem;
-        }
-
-        /* ESPAÇO */
-        .space-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 18px;
-        }
-
-        .space-item {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            height: 250px;
-            border: 1px solid rgba(232, 232, 232, 0.08);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-        }
-
-        .space-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .space-item:hover img {
-            transform: scale(1.06);
-        }
-
-        .space-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(to top, rgba(18, 18, 18, 0.95), transparent);
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .space-overlay span {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--color-gold-olive);
         }
 
         /* DIFERENCIAIS */
@@ -449,12 +225,6 @@
             border: 1px solid rgba(232, 232, 232, 0.05);
             padding: 28px 22px;
             border-radius: 16px;
-            transition: transform 0.25s ease, border-color 0.25s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(156, 141, 92, 0.5);
         }
 
         .card-icon {
@@ -476,56 +246,13 @@
             line-height: 1.5;
         }
 
-        /* GALERIA CORTES */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 18px;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            height: 340px;
-            border: 1px solid rgba(232, 232, 232, 0.05);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.06);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(to top, rgba(18, 18, 18, 0.95), transparent);
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .gallery-overlay span {
-            font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--color-ice-white);
-        }
-
         /* AGENDAMENTO */
         .booking-wrapper {
             background: var(--color-charcoal);
             border: 1px solid rgba(156, 141, 92, 0.22);
             border-radius: 20px;
             padding: 32px;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
             display: grid;
             grid-template-columns: 1.35fr 0.85fr;
             gap: 30px;
@@ -578,16 +305,11 @@
             border-radius: 12px;
             padding: 15px;
             cursor: pointer;
-            transition: 0.2s;
             display: flex;
             justify-content: space-between;
             align-items: center;
             user-select: none;
             min-height: 60px;
-        }
-
-        .service-option:hover {
-            border-color: rgba(156, 141, 92, 0.45);
         }
 
         .service-option.selected {
@@ -633,12 +355,7 @@
             padding: 12px 10px;
             text-align: center;
             cursor: pointer;
-            transition: 0.2s;
             flex-shrink: 0;
-        }
-
-        .date-pill:hover {
-            border-color: rgba(156, 141, 92, 0.45);
         }
 
         .date-pill.selected {
@@ -678,13 +395,7 @@
             font-weight: 700;
             font-size: 0.88rem;
             cursor: pointer;
-            transition: 0.2s;
             min-height: 42px;
-        }
-
-        .time-slot:hover:not(.occupied) {
-            border-color: var(--color-gold-olive);
-            color: var(--color-gold-olive);
         }
 
         .time-slot.selected {
@@ -729,7 +440,6 @@
             color: var(--color-ice-white);
             font-size: 16px;
             outline: none;
-            transition: 0.2s;
         }
 
         .input-group input:focus {
@@ -845,12 +555,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            transition: 0.25s;
             min-height: 52px;
-        }
-
-        .btn-confirm-booking:hover:not(:disabled) {
-            background: var(--color-gold-hover);
         }
 
         .btn-confirm-booking:disabled {
@@ -940,11 +645,6 @@
             border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            transition: 0.25s;
-        }
-
-        .btn-location:hover {
-            background: rgba(156, 141, 92, 0.12);
         }
 
         /* REVIEWS */
@@ -1016,11 +716,7 @@
             font-weight: 700;
         }
 
-        .creator-credit a:hover {
-            text-decoration: underline;
-        }
-
-        /* RESPONSIVIDADE MOBILE PRIORIZADA E LEVE */
+        /* RESPONSIVIDADE MOBILE PRIORIZADA E SUPER LEVE */
         @media (max-width: 920px) {
             .booking-wrapper {
                 grid-template-columns: 1fr;
@@ -1033,10 +729,6 @@
         }
 
         @media (max-width: 768px) {
-            .glow-orb {
-                display: none;
-            }
-
             .whatsapp-float {
                 width: 48px;
                 height: 48px;
@@ -1063,7 +755,7 @@
             }
 
             .hero {
-                padding: 52px 16px 44px;
+                padding: 48px 16px 40px;
             }
 
             .hero h1 {
@@ -1088,51 +780,15 @@
             }
 
             .section-container {
-                padding: 44px 15px;
+                padding: 40px 15px;
             }
 
             .section-title {
-                margin-bottom: 26px;
+                margin-bottom: 24px;
             }
 
             .section-title h2 {
                 font-size: 1.65rem;
-            }
-
-            .space-gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .space-item {
-                height: 165px;
-                border-radius: 12px;
-            }
-
-            .space-overlay {
-                padding: 12px;
-            }
-
-            .space-overlay span {
-                font-size: 0.85rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .gallery-item {
-                height: 220px;
-                border-radius: 12px;
-            }
-
-            .gallery-overlay {
-                padding: 12px;
-            }
-
-            .gallery-overlay span {
-                font-size: 0.9rem;
             }
 
             /* AGENDAMENTO SUPER PEQUENO NO MOBILE */
@@ -1338,25 +994,11 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <div id="intro-screen">
-        <div class="open-stage">
-            <div class="open-item open-item--1">GOLDENS</div>
-            <div class="open-item open-item--2">BARBEARIA</div>
-            <div class="open-item open-item--3">Venha para a <span>Goldens Barbearia</span> e descubra uma nova versão de você.</div>
-        </div>
-    </div>
-
-    <canvas id="bg-particles"></canvas>
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-
     <header id="navbar">
         <div class="logo">GOLDENS <span>BARBEARIA</span></div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#diferenciais">Diferenciais</a></li>
-                <li><a href="#espaco">Nosso Espaço</a></li>
-                <li><a href="#galeria">Modelos de Corte</a></li>
                 <li><a href="#agendamento">Agendamento</a></li>
                 <li><a href="#localizacao">Localização</a></li>
                 <li><a href="#avaliacoes">Avaliações</a></li>
@@ -1378,44 +1020,44 @@
             <a href="#agendamento" class="btn-main">
                 Garantir Meu Horário
             </a>
-            <a href="#galeria" class="btn-secondary">
-                Ver Estilos de Corte
+            <a href="#localizacao" class="btn-secondary">
+                Ver Localização
             </a>
         </div>
     </section>
 
     <section class="section-container" id="diferenciais">
-        <div class="section-title animate-on-scroll">
+        <div class="section-title">
             <h2>Por Que Escolher a Goldens?</h2>
             <p>Atenção aos detalhes e padrão de excelência em cada atendimento</p>
         </div>
 
         <div class="cards-grid">
-            <div class="card animate-on-scroll">
+            <div class="card">
                 <i class="fa-solid fa-clock card-icon"></i>
                 <h3>Atendimento Pontual</h3>
                 <p>Respeito total ao seu tempo. Horários agendados com precisão e sem filas de espera.</p>
             </div>
 
-            <div class="card animate-on-scroll">
+            <div class="card">
                 <i class="fa-solid fa-user-check card-icon"></i>
                 <h3>Consultoria de Imagem</h3>
                 <p>Análise de formato do rosto e tipo de fio para indicar o melhor corte para o seu estilo.</p>
             </div>
 
-            <div class="card animate-on-scroll">
+            <div class="card">
                 <i class="fa-solid fa-pump-soap card-icon"></i>
                 <h3>Produtos de Alta Linha</h3>
                 <p>Utilizamos pomadas, óleos e balms de marcas consagradas para proteger e tratar seu cabelo e barba.</p>
             </div>
 
-            <div class="card animate-on-scroll">
+            <div class="card">
                 <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
                 <h3>Acabamento Impecável</h3>
                 <p>Alinhamento preciso na navalha, pezinho limpo e detalhes refinados que fazem a diferença.</p>
             </div>
 
-            <div class="card animate-on-scroll">
+            <div class="card">
                 <i class="fa-solid fa-shield-cat card-icon"></i>
                 <h3>Higiene e Biossegurança</h3>
                 <p>Lâminas 100% descartáveis e ferramentas devidamente higienizadas e esterilizadas a cada cliente.</p>
@@ -1423,81 +1065,13 @@
         </div>
     </section>
 
-    <section class="section-container" id="espaco">
-        <div class="section-title animate-on-scroll">
-            <h2>Conheça Nosso Espaço</h2>
-            <p>Um ambiente moderno, confortável e preparado para oferecer a melhor experiência</p>
-        </div>
-
-        <div class="space-gallery-grid">
-            <div class="space-item slide-left-card" style="animation-delay: 0.04s;">
-                <img src="https://i.imgur.com/VrgWLc4.jpg" alt="Fachada Principal" loading="eager">
-                <div class="space-overlay"><span>Fachada Principal</span></div>
-            </div>
-
-            <div class="space-item slide-left-card" style="animation-delay: 0.08s;">
-                <img src="https://i.imgur.com/GSNZTMK.jpg" alt="Visão Geral do Salão" loading="lazy">
-                <div class="space-overlay"><span>Visão Geral do Salão</span></div>
-            </div>
-
-            <div class="space-item slide-left-card" style="animation-delay: 0.12s;">
-                <img src="https://i.imgur.com/fH9M1uU.jpg" alt="Cadeira Barber Vintage" loading="lazy">
-                <div class="space-overlay"><span>Cadeira Barber Vintage</span></div>
-            </div>
-
-            <div class="space-item slide-left-card" style="animation-delay: 0.16s;">
-                <img src="https://i.imgur.com/mfanete.jpg" alt="Lounge & Espera Clássica" loading="lazy">
-                <div class="space-overlay"><span>Lounge & Espera Clássica</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-container" id="galeria">
-        <div class="section-title animate-on-scroll">
-            <h2>Modelos & Estilos de Corte</h2>
-            <p>Confira alguns dos nossos trabalhos e inspire-se para o seu próximo visual</p>
-        </div>
-
-        <div class="gallery-grid">
-            <div class="gallery-item animate-on-scroll">
-                <img src="https://i.imgur.com/Xpmftkk.jpg" alt="Fade Moderno" loading="lazy">
-                <div class="gallery-overlay"><span>Fade Moderno</span></div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll">
-                <img src="https://i.imgur.com/aEIKLzy.jpg" alt="Corte Texturizado" loading="lazy">
-                <div class="gallery-overlay"><span>Corte Texturizado</span></div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll">
-                <img src="https://i.imgur.com/OoOSOqy.jpg" alt="Degradê Alinhado" loading="lazy">
-                <div class="gallery-overlay"><span>Degradê Alinhado</span></div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll">
-                <img src="https://i.imgur.com/VlnkGfb.jpg" alt="Corte Americano" loading="lazy">
-                <div class="gallery-overlay"><span>Corte Americano</span></div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll">
-                <img src="https://i.imgur.com/c6BiFtM.jpg" alt="Barba & Cabelo Goldens" loading="lazy">
-                <div class="gallery-overlay"><span>Barba & Cabelo Goldens</span></div>
-            </div>
-
-            <div class="gallery-item animate-on-scroll">
-                <img src="https://i.imgur.com/rx5y5Ig.jpg" alt="Prótese Capilar" loading="lazy">
-                <div class="gallery-overlay"><span>Prótese Capilar</span></div>
-            </div>
-        </div>
-    </section>
-
     <section class="section-container" id="agendamento">
-        <div class="section-title animate-on-scroll">
+        <div class="section-title">
             <h2>Agendamento & Serviços</h2>
             <p>Selecione os serviços, a data, o horário e confirme pelo WhatsApp</p>
         </div>
 
-        <div class="booking-wrapper animate-on-scroll">
+        <div class="booking-wrapper">
             <div class="booking-steps">
                 <div class="booking-step">
                     <div class="step-header">
@@ -1607,12 +1181,12 @@
     </section>
 
     <section class="section-container" id="localizacao">
-        <div class="section-title animate-on-scroll">
+        <div class="section-title">
             <h2>Onde Estamos</h2>
             <p>Venha nos visitar ou tire suas dúvidas diretamente pelo WhatsApp</p>
         </div>
 
-        <div class="contact-card animate-on-scroll">
+        <div class="contact-card">
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fa-solid fa-location-dot"></i>
@@ -1652,13 +1226,13 @@
     </section>
 
     <section class="section-container" id="avaliacoes">
-        <div class="section-title animate-on-scroll">
+        <div class="section-title">
             <h2>O Que Dizem Nossos Clientes</h2>
             <p>Avaliações reais de quem viveu a experiência Goldens</p>
         </div>
 
         <div class="reviews-grid">
-            <div class="review-card animate-on-scroll">
+            <div class="review-card">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
@@ -1669,7 +1243,7 @@
                 </div>
             </div>
 
-            <div class="review-card animate-on-scroll">
+            <div class="review-card">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
@@ -1680,7 +1254,7 @@
                 </div>
             </div>
 
-            <div class="review-card animate-on-scroll">
+            <div class="review-card">
                 <div class="stars">
                     <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                 </div>
@@ -1722,70 +1296,6 @@
                 }
                 lastTouchEnd = now;
             }, { passive: false });
-
-            const introScreen = document.getElementById('intro-screen');
-            setTimeout(() => {
-                if (introScreen) introScreen.classList.add('fade-out');
-            }, 900);
-
-            const canvas = document.getElementById('bg-particles');
-            if (canvas) {
-                const ctx = canvas.getContext('2d');
-                let width = canvas.width = window.innerWidth;
-                let height = canvas.height = window.innerHeight;
-                const isMobile = window.innerWidth <= 768;
-
-                window.addEventListener('resize', () => {
-                    width = canvas.width = window.innerWidth;
-                    height = canvas.height = window.innerHeight;
-                });
-
-                class Particle {
-                    constructor() { this.reset(); }
-                    reset() {
-                        this.x = Math.random() * width;
-                        this.y = Math.random() * height;
-                        this.radius = Math.random() * 1.8 + 0.5;
-                        this.alpha = Math.random() * 0.35 + 0.12;
-                        this.speedX = (Math.random() - 0.5) * 0.3;
-                        this.speedY = (Math.random() - 0.5) * 0.3;
-                    }
-                    update() {
-                        this.x += this.speedX;
-                        this.y += this.speedY;
-                        if (this.x < 0) this.x = width;
-                        if (this.x > width) this.x = 0;
-                        if (this.y < 0) this.y = height;
-                        if (this.y > height) this.y = 0;
-                    }
-                    draw() {
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                        ctx.fillStyle = `rgba(156, 141, 92, ${this.alpha})`;
-                        ctx.fill();
-                    }
-                }
-
-                const count = isMobile ? 16 : 36;
-                const particlesArray = Array.from({ length: count }, () => new Particle());
-                function animateParticles() {
-                    ctx.clearRect(0, 0, width, height);
-                    particlesArray.forEach(p => { p.update(); p.draw(); });
-                    requestAnimationFrame(animateParticles);
-                }
-                animateParticles();
-            }
-
-            const scrollObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.06, rootMargin: '0px 0px -10px 0px' });
-
-            document.querySelectorAll('.animate-on-scroll, .slide-left-card').forEach(el => scrollObserver.observe(el));
 
             const WHATSAPP_NUMBER = "551155395678";
             const state = {
