@@ -246,7 +246,7 @@
             line-height: 1.45;
         }
 
-        /* AGENDAMENTO PEQUENO E DIRETO */
+        /* AGENDAMENTO AJUSTADO */
         .booking-wrapper {
             background: var(--color-charcoal);
             border: 1px solid rgba(156, 141, 92, 0.22);
@@ -258,7 +258,7 @@
         }
 
         .booking-step {
-            margin-bottom: 18px;
+            margin-bottom: 17px;
         }
 
         .booking-step:last-child {
@@ -338,8 +338,17 @@
             -webkit-overflow-scrolling: touch;
         }
 
+        .dates-scroller::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .dates-scroller::-webkit-scrollbar-thumb {
+            background: rgba(156, 141, 92, 0.35);
+            border-radius: 4px;
+        }
+
         .date-pill {
-            min-width: 64px;
+            min-width: 66px;
             background: var(--color-bg-dark);
             border: 1px solid rgba(232, 232, 232, 0.08);
             border-radius: 9px;
@@ -364,14 +373,14 @@
 
         .date-pill .day-num {
             display: block;
-            font-size: 0.96rem;
+            font-size: 0.98rem;
             font-weight: 800;
             margin-top: 1px;
         }
 
         .times-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(68px, 1fr));
             gap: 6px;
         }
 
@@ -696,12 +705,12 @@
             font-weight: 700;
         }
 
-        /* MOBILE BEM PEQUENO */
+        /* MOBILE */
         @media (max-width: 920px) {
             .booking-wrapper {
                 grid-template-columns: 1fr;
-                padding: 8px;
-                gap: 8px;
+                padding: 10px;
+                gap: 10px;
             }
             .booking-summary {
                 position: static;
@@ -772,184 +781,179 @@
                 font-size: 1.45rem;
             }
 
-            /* AGENDAMENTO BEM PEQUENO NO MOBILE */
             #agendamento.section-container {
-                padding: 12px 6px;
+                padding: 16px 8px;
             }
 
             #agendamento .section-title {
-                margin-bottom: 6px;
+                margin-bottom: 9px;
             }
 
             #agendamento .section-title h2 {
-                font-size: 1.05rem;
-                margin-bottom: 1px;
+                font-size: 1.18rem;
+                margin-bottom: 2px;
             }
 
             #agendamento .section-title p {
-                font-size: 0.64rem;
+                font-size: 0.7rem;
             }
 
             .booking-wrapper {
-                padding: 6px;
-                gap: 6px;
-                border-radius: 9px;
+                padding: 9px;
+                gap: 9px;
+                border-radius: 11px;
             }
 
             .booking-step {
-                margin-bottom: 6px;
+                margin-bottom: 9px;
             }
 
             .step-header {
-                gap: 5px;
-                margin-bottom: 4px;
+                gap: 6px;
+                margin-bottom: 6px;
             }
 
             .step-number {
-                width: 16px;
-                height: 16px;
-                font-size: 0.62rem;
+                width: 18px;
+                height: 18px;
+                font-size: 0.68rem;
             }
 
             .step-header h3 {
-                font-size: 0.74rem;
+                font-size: 0.82rem;
             }
 
             .booking-services-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 4px;
+                gap: 5px;
             }
 
             .service-option {
-                padding: 4px 6px;
-                min-height: 28px;
-                border-radius: 6px;
-                gap: 3px;
+                padding: 6px 8px;
+                min-height: 34px;
+                border-radius: 7px;
+                gap: 4px;
             }
 
             .service-option-info h4 {
-                font-size: 0.66rem;
-                line-height: 1.1;
+                font-size: 0.72rem;
+                line-height: 1.15;
             }
 
             .service-option-price {
-                font-size: 0.66rem;
+                font-size: 0.72rem;
                 margin-left: 0;
             }
 
             .dates-scroller {
-                gap: 4px;
-                margin-bottom: 4px;
-                padding-bottom: 2px;
+                gap: 5px;
+                margin-bottom: 6px;
+                padding-bottom: 3px;
             }
 
             .date-pill {
-                min-width: 42px;
-                padding: 3px 3px;
-                border-radius: 6px;
+                min-width: 48px;
+                padding: 5px 4px;
+                border-radius: 7px;
             }
 
             .date-pill .day-name {
-                font-size: 0.52rem;
+                font-size: 0.56rem;
             }
 
             .date-pill .day-num {
-                font-size: 0.7rem;
-                margin-top: 0;
+                font-size: 0.78rem;
+                margin-top: 1px;
             }
 
             .times-grid {
                 grid-template-columns: repeat(7, 1fr);
-                gap: 3px;
+                gap: 4px;
             }
 
             .time-slot {
-                padding: 3px 1px;
-                min-height: 22px;
-                font-size: 0.62rem;
-                border-radius: 5px;
+                padding: 4px 2px;
+                min-height: 26px;
+                font-size: 0.66rem;
+                border-radius: 6px;
             }
 
             .client-inputs {
                 grid-template-columns: 1fr 1fr;
-                gap: 4px;
-            }
-
-            .input-group.full {
-                display: none;
+                gap: 6px;
             }
 
             .input-group {
-                gap: 1px;
+                gap: 2px;
             }
 
             .input-group label {
-                font-size: 0.58rem;
-            }
-
-            .input-group input {
-                padding: 4px 6px;
-                font-size: 11px;
-                border-radius: 5px;
-            }
-
-            .booking-summary {
-                padding: 6px;
-                border-radius: 8px;
-            }
-
-            .booking-summary h3 {
-                font-size: 0.76rem;
-                margin-bottom: 4px;
-                padding-bottom: 3px;
-            }
-
-            .summary-row {
-                margin-bottom: 2px;
-                font-size: 0.62rem;
-            }
-
-            .summary-services-list {
-                padding: 4px 6px;
-                margin: 4px 0 5px;
-                min-height: 18px;
-                border-radius: 5px;
-            }
-
-            .summary-services-list p {
-                font-size: 0.6rem;
-            }
-
-            .summary-service-item {
-                font-size: 0.62rem;
-                margin-bottom: 1px;
-            }
-
-            .summary-total-box {
-                padding-top: 4px;
-                margin-bottom: 5px;
-            }
-
-            .summary-total-box span {
                 font-size: 0.64rem;
             }
 
+            .input-group input {
+                padding: 6px 8px;
+                font-size: 12px;
+                border-radius: 6px;
+            }
+
+            .booking-summary {
+                padding: 9px;
+                border-radius: 10px;
+            }
+
+            .booking-summary h3 {
+                font-size: 0.86rem;
+                margin-bottom: 6px;
+                padding-bottom: 4px;
+            }
+
+            .summary-row {
+                margin-bottom: 3px;
+                font-size: 0.68rem;
+            }
+
+            .summary-services-list {
+                padding: 6px 8px;
+                margin: 6px 0 7px;
+                min-height: 24px;
+                border-radius: 6px;
+            }
+
+            .summary-services-list p {
+                font-size: 0.66rem;
+            }
+
+            .summary-service-item {
+                font-size: 0.68rem;
+                margin-bottom: 2px;
+            }
+
+            .summary-total-box {
+                padding-top: 6px;
+                margin-bottom: 7px;
+            }
+
+            .summary-total-box span {
+                font-size: 0.7rem;
+            }
+
             .summary-total-box strong {
-                font-size: 0.88rem;
+                font-size: 1rem;
             }
 
             .btn-confirm-booking {
-                padding: 5px 6px;
-                min-height: 28px;
-                font-size: 0.68rem;
-                border-radius: 6px;
-                gap: 4px;
+                padding: 7px 8px;
+                min-height: 34px;
+                font-size: 0.74rem;
+                border-radius: 7px;
+                gap: 5px;
             }
 
             .booking-feedback {
-                margin-top: 2px;
-                font-size: 0.56rem;
-                min-height: 8px;
+                margin-top: 3px;
+                font-size: 0.62rem;
+                min-height: 10px;
             }
 
             .contact-card {
