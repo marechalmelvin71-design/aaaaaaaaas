@@ -246,20 +246,20 @@
             line-height: 1.5;
         }
 
-        /* AGENDAMENTO */
+        /* AGENDAMENTO MELHORADO E MAIS LONGO */
         .booking-wrapper {
             background: var(--color-charcoal);
-            border: 1px solid rgba(156, 141, 92, 0.22);
+            border: 1px solid rgba(156, 141, 92, 0.25);
             border-radius: 20px;
-            padding: 32px;
+            padding: 36px;
             box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
             display: grid;
             grid-template-columns: 1.35fr 0.85fr;
-            gap: 30px;
+            gap: 32px;
         }
 
         .booking-step {
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .booking-step:last-child {
@@ -270,17 +270,17 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .step-number {
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: var(--color-gold-olive);
             color: var(--color-charcoal);
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -288,28 +288,28 @@
         }
 
         .step-header h3 {
-            font-size: 1.12rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--color-ice-white);
         }
 
         .booking-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
         }
 
         .service-option {
             background: var(--color-bg-dark);
             border: 1px solid rgba(232, 232, 232, 0.08);
             border-radius: 12px;
-            padding: 15px;
+            padding: 16px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             user-select: none;
-            min-height: 60px;
+            min-height: 70px;
         }
 
         .service-option.selected {
@@ -318,15 +318,56 @@
         }
 
         .service-option-info h4 {
-            font-size: 0.98rem;
+            font-size: 1rem;
             color: var(--color-ice-white);
+            margin-bottom: 4px;
+        }
+
+        .service-option-info small {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
         }
 
         .service-option-price {
             font-weight: 800;
             color: var(--color-gold-olive);
-            font-size: 1.02rem;
+            font-size: 1.04rem;
             white-space: nowrap;
+            margin-left: 10px;
+        }
+
+        .pref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+        }
+
+        .pref-option {
+            background: var(--color-bg-dark);
+            border: 1px solid rgba(232, 232, 232, 0.08);
+            border-radius: 12px;
+            padding: 14px;
+            cursor: pointer;
+            text-align: center;
+            user-select: none;
+        }
+
+        .pref-option.selected {
+            background: rgba(156, 141, 92, 0.14);
+            border-color: var(--color-gold-olive);
+        }
+
+        .pref-option strong {
+            display: block;
+            font-size: 0.94rem;
+            color: var(--color-ice-white);
+            margin-bottom: 3px;
+        }
+
+        .pref-option span {
+            font-size: 0.78rem;
+            color: var(--color-text-muted);
         }
 
         .dates-scroller {
@@ -334,7 +375,7 @@
             gap: 10px;
             overflow-x: auto;
             padding-bottom: 8px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -348,11 +389,11 @@
         }
 
         .date-pill {
-            min-width: 78px;
+            min-width: 82px;
             background: var(--color-bg-dark);
             border: 1px solid rgba(232, 232, 232, 0.08);
             border-radius: 12px;
-            padding: 12px 10px;
+            padding: 13px 10px;
             text-align: center;
             cursor: pointer;
             flex-shrink: 0;
@@ -366,7 +407,7 @@
 
         .date-pill .day-name {
             display: block;
-            font-size: 0.74rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: 700;
             opacity: 0.85;
@@ -374,28 +415,28 @@
 
         .date-pill .day-num {
             display: block;
-            font-size: 1.12rem;
+            font-size: 1.15rem;
             font-weight: 800;
-            margin-top: 2px;
+            margin-top: 3px;
         }
 
         .times-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
-            gap: 9px;
+            grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+            gap: 10px;
         }
 
         .time-slot {
             background: var(--color-bg-dark);
             border: 1px solid rgba(232, 232, 232, 0.08);
             color: var(--color-ice-white);
-            padding: 11px 6px;
+            padding: 12px 8px;
             border-radius: 10px;
             text-align: center;
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             cursor: pointer;
-            min-height: 42px;
+            min-height: 44px;
         }
 
         .time-slot.selected {
@@ -413,13 +454,13 @@
         .client-inputs {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            gap: 14px;
         }
 
         .input-group {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 7px;
         }
 
         .input-group.full {
@@ -427,7 +468,7 @@
         }
 
         .input-group label {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: var(--color-text-muted);
             font-weight: 600;
         }
@@ -436,7 +477,7 @@
             background: var(--color-bg-dark);
             border: 1px solid rgba(232, 232, 232, 0.1);
             border-radius: 10px;
-            padding: 13px 14px;
+            padding: 14px 15px;
             color: var(--color-ice-white);
             font-size: 16px;
             outline: none;
@@ -450,13 +491,14 @@
             background: var(--color-bg-dark);
             border: 1px solid rgba(156, 141, 92, 0.3);
             border-radius: 16px;
-            padding: 26px;
+            padding: 28px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: sticky;
             top: 90px;
             height: fit-content;
+            min-height: 440px;
         }
 
         .summary-badge {
@@ -468,12 +510,12 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--color-gold-olive);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .booking-summary h3 {
-            font-size: 1.3rem;
-            margin-bottom: 18px;
+            font-size: 1.32rem;
+            margin-bottom: 20px;
             padding-bottom: 14px;
             border-bottom: 1px dashed rgba(232, 232, 232, 0.12);
             color: var(--color-ice-white);
@@ -483,8 +525,8 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
+            margin-bottom: 14px;
+            font-size: 0.92rem;
         }
 
         .summary-row span:first-child {
@@ -498,23 +540,23 @@
         }
 
         .summary-services-list {
-            background: rgba(34, 34, 34, 0.7);
+            background: rgba(34, 34, 34, 0.75);
             border-radius: 10px;
-            padding: 12px 14px;
-            margin: 14px 0 18px;
-            min-height: 56px;
+            padding: 14px 15px;
+            margin: 16px 0 20px;
+            min-height: 76px;
         }
 
         .summary-services-list p {
             color: var(--color-text-muted);
-            font-size: 0.84rem;
+            font-size: 0.86rem;
         }
 
         .summary-service-item {
             display: flex;
             justify-content: space-between;
-            font-size: 0.88rem;
-            margin-bottom: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
             color: var(--color-ice-white);
         }
 
@@ -524,7 +566,7 @@
 
         .summary-total-box {
             border-top: 1px solid rgba(156, 141, 92, 0.25);
-            padding-top: 15px;
+            padding-top: 16px;
             margin-bottom: 18px;
             display: flex;
             justify-content: space-between;
@@ -532,12 +574,12 @@
         }
 
         .summary-total-box span {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: var(--color-text-muted);
         }
 
         .summary-total-box strong {
-            font-size: 1.7rem;
+            font-size: 1.75rem;
             color: var(--color-gold-olive);
         }
 
@@ -555,7 +597,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            min-height: 52px;
+            min-height: 54px;
         }
 
         .btn-confirm-booking:disabled {
@@ -565,7 +607,7 @@
 
         .booking-feedback {
             margin-top: 10px;
-            font-size: 0.82rem;
+            font-size: 0.84rem;
             text-align: center;
             color: var(--color-gold-olive);
             min-height: 18px;
@@ -716,15 +758,16 @@
             font-weight: 700;
         }
 
-        /* RESPONSIVIDADE MOBILE PRIORIZADA E SUPER LEVE */
+        /* RESPONSIVIDADE MOBILE */
         @media (max-width: 920px) {
             .booking-wrapper {
                 grid-template-columns: 1fr;
-                padding: 10px 8px;
-                gap: 8px;
+                padding: 22px 16px;
+                gap: 24px;
             }
             .booking-summary {
                 position: static;
+                min-height: auto;
             }
         }
 
@@ -780,7 +823,7 @@
             }
 
             .section-container {
-                padding: 40px 15px;
+                padding: 42px 15px;
             }
 
             .section-title {
@@ -791,187 +834,24 @@
                 font-size: 1.65rem;
             }
 
-            /* AGENDAMENTO SUPER PEQUENO NO MOBILE */
-            #agendamento.section-container {
-                padding: 10px 6px;
-            }
-
-            #agendamento .section-title {
-                margin-bottom: 6px;
-            }
-
-            #agendamento .section-title h2 {
-                font-size: 1.05rem;
-                margin-bottom: 1px;
-            }
-
-            #agendamento .section-title p {
-                font-size: 0.62rem;
-            }
-
-            .booking-wrapper {
-                padding: 5px;
-                gap: 5px;
-                border-radius: 8px;
-            }
-
-            .booking-step {
-                margin-bottom: 5px;
-            }
-
-            .step-header {
-                gap: 4px;
-                margin-bottom: 3px;
-            }
-
-            .step-number {
-                width: 14px;
-                height: 14px;
-                font-size: 0.56rem;
-            }
-
-            .step-header h3 {
-                font-size: 0.7rem;
-            }
-
             .booking-services-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 3px;
+                grid-template-columns: 1fr;
+                gap: 10px;
             }
 
-            .service-option {
-                padding: 3px 5px;
-                min-height: 24px;
-                border-radius: 5px;
-                gap: 2px;
-            }
-
-            .service-option-info h4 {
-                font-size: 0.63rem;
-                line-height: 1.05;
-            }
-
-            .service-option-price {
-                font-size: 0.63rem;
-            }
-
-            .dates-scroller {
-                gap: 3px;
-                margin-bottom: 3px;
-                padding-bottom: 2px;
-            }
-
-            .date-pill {
-                min-width: 38px;
-                padding: 2px 2px;
-                border-radius: 5px;
-            }
-
-            .date-pill .day-name {
-                font-size: 0.48rem;
-            }
-
-            .date-pill .day-num {
-                font-size: 0.64rem;
-                margin-top: 0;
+            .pref-grid {
+                grid-template-columns: 1fr;
+                gap: 9px;
             }
 
             .times-grid {
-                grid-template-columns: repeat(7, 1fr);
-                gap: 2px;
-            }
-
-            .time-slot {
-                padding: 2px 1px;
-                min-height: 20px;
-                font-size: 0.6rem;
-                border-radius: 4px;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
             }
 
             .client-inputs {
-                grid-template-columns: 1fr 1fr;
-                gap: 3px;
-            }
-
-            .input-group.full {
-                display: none;
-            }
-
-            .input-group {
-                gap: 1px;
-            }
-
-            .input-group label {
-                font-size: 0.55rem;
-            }
-
-            .input-group input {
-                padding: 3px 5px;
-                font-size: 11px;
-                border-radius: 5px;
-            }
-
-            .booking-summary {
-                padding: 5px;
-                border-radius: 7px;
-            }
-
-            .summary-badge {
-                display: none;
-            }
-
-            .booking-summary h3 {
-                font-size: 0.72rem;
-                margin-bottom: 3px;
-                padding-bottom: 2px;
-            }
-
-            .summary-row {
-                margin-bottom: 1px;
-                font-size: 0.6rem;
-            }
-
-            .summary-services-list {
-                padding: 3px 5px;
-                margin: 3px 0 4px;
-                min-height: 16px;
-                border-radius: 5px;
-            }
-
-            .summary-services-list p {
-                font-size: 0.58rem;
-            }
-
-            .summary-service-item {
-                font-size: 0.6rem;
-                margin-bottom: 1px;
-            }
-
-            .summary-total-box {
-                padding-top: 3px;
-                margin-bottom: 4px;
-            }
-
-            .summary-total-box span {
-                font-size: 0.62rem;
-            }
-
-            .summary-total-box strong {
-                font-size: 0.82rem;
-            }
-
-            .btn-confirm-booking {
-                padding: 4px 6px;
-                min-height: 26px;
-                font-size: 0.66rem;
-                border-radius: 5px;
-                gap: 4px;
-            }
-
-            .booking-feedback {
-                margin-top: 2px;
-                font-size: 0.55rem;
-                min-height: 8px;
+                grid-template-columns: 1fr;
+                gap: 11px;
             }
 
             .contact-card {
@@ -1068,7 +948,7 @@
     <section class="section-container" id="agendamento">
         <div class="section-title">
             <h2>Agendamento & Serviços</h2>
-            <p>Selecione os serviços, a data, o horário e confirme pelo WhatsApp</p>
+            <p>Monte seu atendimento completo, escolha a preferência, data e horário e confirme no WhatsApp</p>
         </div>
 
         <div class="booking-wrapper">
@@ -1082,13 +962,15 @@
                         <div class="service-option" data-id="corte" data-name="Corte Cabelo" data-price="90" data-duration="45">
                             <div class="service-option-info">
                                 <h4>Corte Cabelo</h4>
+                                <small>45 min • Acabamento na navalha</small>
                             </div>
                             <div class="service-option-price">R$ 90</div>
                         </div>
 
-                        <div class="service-option" data-id="barba" data-name="Barba" data-price="70" data-duration="35">
+                        <div class="service-option" data-id="barba" data-name="Barba & Toalha Quente" data-price="70" data-duration="35">
                             <div class="service-option-info">
                                 <h4>Barba</h4>
+                                <small>35 min • Modelagem e balm</small>
                             </div>
                             <div class="service-option-price">R$ 70</div>
                         </div>
@@ -1096,13 +978,31 @@
                         <div class="service-option" data-id="combo" data-name="Combo Cabelo & Barba" data-price="140" data-duration="75">
                             <div class="service-option-info">
                                 <h4>Combo Cabelo & Barba</h4>
+                                <small>75 min • Experiência completa</small>
                             </div>
                             <div class="service-option-price">R$ 140</div>
+                        </div>
+
+                        <div class="service-option" data-id="acabamento" data-name="Pezinho & Acabamento" data-price="40" data-duration="20">
+                            <div class="service-option-info">
+                                <h4>Pezinho & Acabamento</h4>
+                                <small>20 min • Contorno e alinhamento</small>
+                            </div>
+                            <div class="service-option-price">R$ 40</div>
+                        </div>
+
+                        <div class="service-option" data-id="hidratacao" data-name="Hidratação / Barboterapia" data-price="65" data-duration="30">
+                            <div class="service-option-info">
+                                <h4>Barboterapia</h4>
+                                <small>30 min • Vapor e massagem facial</small>
+                            </div>
+                            <div class="service-option-price">R$ 65</div>
                         </div>
 
                         <div class="service-option" data-id="protese" data-name="Prótese Capilar (Consulta)" data-price="0" data-duration="60">
                             <div class="service-option-info">
                                 <h4>Prótese Capilar</h4>
+                                <small>60 min • Avaliação técnica</small>
                             </div>
                             <div class="service-option-price">Consulta</div>
                         </div>
@@ -1112,6 +1012,27 @@
                 <div class="booking-step">
                     <div class="step-header">
                         <div class="step-number">2</div>
+                        <h3>Preferência de Atendimento</h3>
+                    </div>
+                    <div class="pref-grid" id="prefs-container">
+                        <div class="pref-option selected" data-pref="Primeiro disponível">
+                            <strong>Primeiro disponível</strong>
+                            <span>Maior agilidade de agenda</span>
+                        </div>
+                        <div class="pref-option" data-pref="Especialista em Degradê / Fade">
+                            <strong>Especialista em Fade</strong>
+                            <span>Foco em degradê e precisão</span>
+                        </div>
+                        <div class="pref-option" data-pref="Consultoria completa de visual">
+                            <strong>Consultoria de Estilo</strong>
+                            <span>Ajuda para escolher o corte</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-step">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
                         <h3>Escolha o Dia e Horário</h3>
                     </div>
                     <div class="dates-scroller" id="dates-container"></div>
@@ -1120,7 +1041,7 @@
 
                 <div class="booking-step">
                     <div class="step-header">
-                        <div class="step-number">3</div>
+                        <div class="step-number">4</div>
                         <h3>Seus Dados</h3>
                     </div>
                     <div class="client-inputs">
@@ -1133,8 +1054,8 @@
                             <input type="tel" id="client-phone" placeholder="(11) 99999-9999">
                         </div>
                         <div class="input-group full">
-                            <label for="client-notes">Observação (opcional)</label>
-                            <input type="text" id="client-notes" placeholder="Ex: Degradê na zero, barba alinhada...">
+                            <label for="client-notes">Observação / Estilo desejado (opcional)</label>
+                            <input type="text" id="client-notes" placeholder="Ex: Mid fade na zero, barba alinhada, cabelo mais longo em cima...">
                         </div>
                     </div>
                 </div>
@@ -1153,6 +1074,11 @@
                     <div class="summary-row">
                         <span>Horário:</span>
                         <strong id="summary-time">Selecione um horário</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Preferência:</span>
+                        <strong id="summary-pref">Primeiro disponível</strong>
                     </div>
 
                     <div class="summary-row">
@@ -1199,7 +1125,7 @@
                     <i class="fa-solid fa-clock"></i>
                     <div>
                         <h4>Funcionamento</h4>
-                        <p>Seg a Sáb: 09:00 às 20:00</p>
+                        <p>Seg a Sáb: 10:00 às 19:30</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1270,7 +1196,7 @@
     <footer>
         <p>&copy; 2026 <span>GOLDENS BARBEARIA</span>. Todos os direitos reservados.</p>
         <p class="creator-credit">
-            Criado por <span>vyro dev</span> • <a href="https://wa.me/5511946453542" target="_blank">11 94645-3542</a>
+            Criado por <span>vyro dev</span> • <a href="https://wa.me/5511946453542" target="_blank">11 94645-3542</a>[cite: 1]
         </p>
     </footer>
 
@@ -1300,6 +1226,7 @@
             const WHATSAPP_NUMBER = "551155395678";
             const state = {
                 services: [],
+                pref: "Primeiro disponível",
                 dateText: "",
                 time: "",
                 clientName: "",
@@ -1308,6 +1235,7 @@
             };
 
             const serviceCards = document.querySelectorAll('.service-option');
+            const prefCards = document.querySelectorAll('.pref-option');
             const datesContainer = document.getElementById('dates-container');
             const timesContainer = document.getElementById('times-container');
             const clientNameInput = document.getElementById('client-name');
@@ -1316,6 +1244,7 @@
 
             const summaryDate = document.getElementById('summary-date');
             const summaryTime = document.getElementById('summary-time');
+            const summaryPref = document.getElementById('summary-pref');
             const summaryDuration = document.getElementById('summary-duration');
             const summaryServices = document.getElementById('summary-services');
             const summaryTotal = document.getElementById('summary-total');
@@ -1364,7 +1293,7 @@
                 updateSummary();
 
                 const slots = [
-                    '09:00', '09:45', '10:30', '11:15',
+                    '10:00', '10:45', '11:30', '12:15',
                     '13:00', '13:45', '14:30', '15:15',
                     '16:00', '16:45', '17:30', '18:15', '19:00'
                 ];
@@ -1413,6 +1342,15 @@
                         state.services.push({ id, name, price, duration });
                     }
                     updateSummary();
+                });
+            });
+
+            prefCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    prefCards.forEach(p => p.classList.remove('selected'));
+                    card.classList.add('selected');
+                    state.pref = card.dataset.pref;
+                    summaryPref.textContent = state.pref;
                 });
             });
 
@@ -1478,7 +1416,8 @@
                 msg += `*Cliente:* ${state.clientName}\n`;
                 msg += `*Contato:* ${state.clientPhone}\n`;
                 msg += `*Data:* ${state.dateText}\n`;
-                msg += `*Horário:* ${state.time}\n\n`;
+                msg += `*Horário:* ${state.time}\n`;
+                msg += `*Preferência:* ${state.pref}\n\n`;
                 msg += `*Serviços Escolhidos:*\n${listaServicos}\n\n`;
                 msg += `*Valor Estimado:* R$ ${total.toFixed(2).replace('.', ',')}`;
 
