@@ -116,7 +116,7 @@
         .hero {
             text-align: center;
             padding: 64px 20px 48px;
-            max-width: 200px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -246,7 +246,7 @@
             line-height: 1.45;
         }
 
-        /* AGENDAMENTO AJUSTADO */
+        /* AGENDAMENTO */
         .booking-wrapper {
             background: var(--color-charcoal);
             border: 1px solid rgba(156, 141, 92, 0.22);
@@ -439,6 +439,7 @@
             color: var(--color-ice-white);
             font-size: 15px;
             outline: none;
+            width: 100%;
         }
 
         .input-group input:focus {
@@ -466,11 +467,16 @@
             color: var(--color-ice-white);
         }
 
+        .summary-meta-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
         .summary-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 8px;
             font-size: 0.84rem;
         }
 
@@ -481,7 +487,7 @@
         .summary-row strong {
             color: var(--color-ice-white);
             text-align: right;
-            max-width: 62%;
+            max-width: 65%;
         }
 
         .summary-services-list {
@@ -705,12 +711,12 @@
             font-weight: 700;
         }
 
-        /* MOBILE */
+        /* MOBILE: MAIS LARGO NOS BOTÕES E MAIS CURTO NA ALTURA */
         @media (max-width: 920px) {
             .booking-wrapper {
                 grid-template-columns: 1fr;
-                padding: 10px;
-                gap: 10px;
+                padding: 12px;
+                gap: 12px;
             }
             .booking-summary {
                 position: static;
@@ -781,103 +787,108 @@
                 font-size: 1.45rem;
             }
 
+            /* AGENDAMENTO MOBILE: MAIS CURTO E MAIS LARGO */
             #agendamento.section-container {
-                padding: 16px 8px;
+                padding: 14px 6px;
             }
 
             #agendamento .section-title {
-                margin-bottom: 9px;
+                margin-bottom: 8px;
             }
 
             #agendamento .section-title h2 {
-                font-size: 1.18rem;
+                font-size: 1.2rem;
                 margin-bottom: 2px;
             }
 
             #agendamento .section-title p {
-                font-size: 0.7rem;
+                font-size: 0.72rem;
             }
 
             .booking-wrapper {
-                padding: 9px;
-                gap: 9px;
-                border-radius: 11px;
+                padding: 10px 8px;
+                gap: 8px;
+                border-radius: 12px;
             }
 
             .booking-step {
-                margin-bottom: 9px;
+                margin-bottom: 8px;
             }
 
             .step-header {
                 gap: 6px;
-                margin-bottom: 6px;
+                margin-bottom: 5px;
             }
 
             .step-number {
-                width: 18px;
-                height: 18px;
-                font-size: 0.68rem;
+                width: 19px;
+                height: 19px;
+                font-size: 0.7rem;
             }
 
             .step-header h3 {
-                font-size: 0.82rem;
+                font-size: 0.84rem;
             }
 
+            /* Serviços largos em 2 colunas, altura enxuta */
             .booking-services-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 5px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
             }
 
             .service-option {
-                padding: 6px 8px;
+                padding: 6px 10px;
                 min-height: 34px;
-                border-radius: 7px;
-                gap: 4px;
+                border-radius: 8px;
+                gap: 6px;
             }
 
             .service-option-info h4 {
-                font-size: 0.72rem;
+                font-size: 0.76rem;
                 line-height: 1.15;
             }
 
             .service-option-price {
-                font-size: 0.72rem;
+                font-size: 0.76rem;
                 margin-left: 0;
             }
 
+            /* Datas largas na horizontal, altura baixa */
             .dates-scroller {
-                gap: 5px;
+                gap: 6px;
                 margin-bottom: 6px;
                 padding-bottom: 3px;
             }
 
             .date-pill {
-                min-width: 48px;
-                padding: 5px 4px;
-                border-radius: 7px;
+                min-width: 62px;
+                padding: 5px 8px;
+                border-radius: 8px;
             }
 
             .date-pill .day-name {
-                font-size: 0.56rem;
+                font-size: 0.62rem;
             }
 
             .date-pill .day-num {
-                font-size: 0.78rem;
+                font-size: 0.84rem;
                 margin-top: 1px;
             }
 
+            /* Horários mais largos (5 colunas em vez de 7 apertadas) e altura enxuta */
             .times-grid {
-                grid-template-columns: repeat(7, 1fr);
-                gap: 4px;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 5px;
             }
 
             .time-slot {
-                padding: 4px 2px;
-                min-height: 26px;
-                font-size: 0.66rem;
-                border-radius: 6px;
+                padding: 5px 4px;
+                min-height: 28px;
+                font-size: 0.74rem;
+                border-radius: 7px;
             }
 
+            /* Inputs largos lado a lado */
             .client-inputs {
                 grid-template-columns: 1fr 1fr;
                 gap: 6px;
@@ -888,72 +899,115 @@
             }
 
             .input-group label {
-                font-size: 0.64rem;
+                font-size: 0.66rem;
             }
 
             .input-group input {
-                padding: 6px 8px;
-                font-size: 12px;
-                border-radius: 6px;
+                padding: 6px 9px;
+                font-size: 13px;
+                border-radius: 7px;
+                height: 32px;
             }
 
+            /* Resumo horizontal e compacto (economiza muita altura) */
             .booking-summary {
-                padding: 9px;
+                padding: 8px 10px;
                 border-radius: 10px;
             }
 
             .booking-summary h3 {
-                font-size: 0.86rem;
+                display: none;
+            }
+
+            .summary-meta-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
                 margin-bottom: 6px;
-                padding-bottom: 4px;
             }
 
             .summary-row {
-                margin-bottom: 3px;
+                flex-direction: column;
+                align-items: flex-start;
+                background: rgba(34, 34, 34, 0.65);
+                padding: 5px 7px;
+                border-radius: 6px;
                 font-size: 0.68rem;
+                margin-bottom: 0;
+            }
+
+            .summary-row strong {
+                text-align: left;
+                max-width: 100%;
+                font-size: 0.74rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
             }
 
             .summary-services-list {
-                padding: 6px 8px;
-                margin: 6px 0 7px;
+                padding: 5px 8px;
+                margin: 0 0 6px;
                 min-height: 24px;
                 border-radius: 6px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px 10px;
+                align-items: center;
             }
 
             .summary-services-list p {
-                font-size: 0.66rem;
+                font-size: 0.68rem;
             }
 
             .summary-service-item {
-                font-size: 0.68rem;
-                margin-bottom: 2px;
-            }
-
-            .summary-total-box {
-                padding-top: 6px;
-                margin-bottom: 7px;
-            }
-
-            .summary-total-box span {
-                font-size: 0.7rem;
-            }
-
-            .summary-total-box strong {
-                font-size: 1rem;
-            }
-
-            .btn-confirm-booking {
-                padding: 7px 8px;
-                min-height: 34px;
-                font-size: 0.74rem;
-                border-radius: 7px;
+                font-size: 0.72rem;
+                margin-bottom: 0;
                 gap: 5px;
             }
 
+            .summary-footer-row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                border-top: 1px solid rgba(156, 141, 92, 0.25);
+                padding-top: 6px;
+            }
+
+            .summary-total-box {
+                border-top: none;
+                padding-top: 0;
+                margin-bottom: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                flex-shrink: 0;
+            }
+
+            .summary-total-box span {
+                font-size: 0.66rem;
+                line-height: 1;
+            }
+
+            .summary-total-box strong {
+                font-size: 1.05rem;
+                line-height: 1.2;
+            }
+
+            .btn-confirm-booking {
+                flex: 1;
+                padding: 8px 12px;
+                min-height: 36px;
+                font-size: 0.8rem;
+                border-radius: 8px;
+                gap: 6px;
+            }
+
             .booking-feedback {
-                margin-top: 3px;
-                font-size: 0.62rem;
-                min-height: 10px;
+                margin-top: 4px;
+                font-size: 0.66rem;
+                min-height: 12px;
             }
 
             .contact-card {
@@ -1126,19 +1180,21 @@
                 <div>
                     <h3>Resumo</h3>
 
-                    <div class="summary-row">
-                        <span>Data:</span>
-                        <strong id="summary-date">Selecione um dia</strong>
-                    </div>
+                    <div class="summary-meta-grid">
+                        <div class="summary-row">
+                            <span>Data</span>
+                            <strong id="summary-date">Selecione</strong>
+                        </div>
 
-                    <div class="summary-row">
-                        <span>Horário:</span>
-                        <strong id="summary-time">Selecione um horário</strong>
-                    </div>
+                        <div class="summary-row">
+                            <span>Horário</span>
+                            <strong id="summary-time">--:--</strong>
+                        </div>
 
-                    <div class="summary-row">
-                        <span>Duração:</span>
-                        <strong id="summary-duration">0 min</strong>
+                        <div class="summary-row">
+                            <span>Duração</span>
+                            <strong id="summary-duration">0 min</strong>
+                        </div>
                     </div>
 
                     <div class="summary-services-list" id="summary-services">
@@ -1147,14 +1203,16 @@
                 </div>
 
                 <div>
-                    <div class="summary-total-box">
-                        <span>Total:</span>
-                        <strong id="summary-total">R$ 0,00</strong>
-                    </div>
+                    <div class="summary-footer-row">
+                        <div class="summary-total-box">
+                            <span>Total</span>
+                            <strong id="summary-total">R$ 0,00</strong>
+                        </div>
 
-                    <button type="button" id="btn-confirm-booking" class="btn-confirm-booking" disabled>
-                        <i class="fa-brands fa-whatsapp"></i> Confirmar no WhatsApp
-                    </button>
+                        <button type="button" id="btn-confirm-booking" class="btn-confirm-booking" disabled>
+                            <i class="fa-brands fa-whatsapp"></i> Confirmar
+                        </button>
+                    </div>
                     <div class="booking-feedback" id="booking-feedback"></div>
                 </div>
             </div>
@@ -1313,21 +1371,21 @@
                     const dayName = generatedDays === 0 ? 'Hoje' : diasSemana[dateObj.getDay()];
                     const dayNum = String(dateObj.getDate()).padStart(2, '0');
                     const monthName = meses[dateObj.getMonth()];
-                    const fullDateLabel = `${dayName}, ${dayNum} de ${monthName}`;
+                    const fullDateLabel = `${dayName}, ${dayNum}/${String(dateObj.getMonth() + 1).padStart(2, '0')}`;
 
                     const pill = document.createElement('div');
                     pill.className = 'date-pill' + (generatedDays === 0 ? ' selected' : '');
                     pill.innerHTML = `<span class="day-name">${dayName}</span><span class="day-num">${dayNum}/${String(dateObj.getMonth() + 1).padStart(2, '0')}</span>`;
 
                     if (generatedDays === 0) {
-                        state.dateText = fullDateLabel;
+                        state.dateText = `${dayName}, ${dayNum} de ${monthName}`;
                         summaryDate.textContent = fullDateLabel;
                     }
 
                     pill.addEventListener('click', () => {
                         document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('selected'));
                         pill.classList.add('selected');
-                        state.dateText = fullDateLabel;
+                        state.dateText = `${dayName}, ${dayNum} de ${monthName}`;
                         summaryDate.textContent = fullDateLabel;
                         renderTimes(dayName === 'Hoje');
                     });
@@ -1341,7 +1399,7 @@
             function renderTimes(isToday) {
                 timesContainer.innerHTML = '';
                 state.time = '';
-                summaryTime.textContent = 'Selecione um horário';
+                summaryTime.textContent = '--:--';
                 updateSummary();
 
                 const slots = [
