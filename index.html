@@ -451,7 +451,7 @@
 
         .client-inputs {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: minmax(0, 1fr);
             gap: 12px;
             width: 100%;
         }
@@ -461,10 +461,6 @@
             flex-direction: column;
             gap: 6px;
             min-width: 0;
-        }
-
-        .input-group.full {
-            grid-column: 1 / -1;
         }
 
         .input-group label {
@@ -852,11 +848,6 @@
                 gap: 7px;
             }
 
-            .client-inputs {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 10px;
-            }
-
             .contact-card {
                 padding: 18px 14px;
             }
@@ -873,7 +864,7 @@
 </head>
 <body>
 
-    <a href="https://wa.me/551155395678" target="_blank" class="whatsapp-float" aria-label="Chamar no WhatsApp">
+    <a href="https://wa.me/551155395678?text=Oi!%20Vim%20pelo%20site%20da%20Goldens%20Barbearia%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="whatsapp-float" aria-label="Chamar no WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -1015,14 +1006,6 @@
                             <label for="client-name">Seu Nome *</label>
                             <input type="text" id="client-name" placeholder="Ex: João Silva">
                         </div>
-                        <div class="input-group">
-                            <label for="client-phone">Seu WhatsApp *</label>
-                            <input type="tel" id="client-phone" placeholder="(11) 99999-9999">
-                        </div>
-                        <div class="input-group full">
-                            <label for="client-notes">Observação / Estilo desejado (opcional)</label>
-                            <input type="text" id="client-notes" placeholder="Ex: Mid fade na zero, barba alinhada, cabelo mais longo em cima...">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1105,7 +1088,7 @@
                 <a href="https://maps.app.goo.gl/s64Nx2MP6TrX9HySA" target="_blank" class="btn-location">
                     <i class="fa-solid fa-map-location-dot"></i> Abrir no Google Maps
                 </a>
-                <a href="https://wa.me/551155395678" target="_blank" class="btn-main">
+                <a href="https://wa.me/551155395678?text=Oi!%20Vim%20pelo%20site%20da%20Goldens%20Barbearia%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="btn-main">
                     <i class="fa-brands fa-whatsapp"></i> +55 (11) 5539-5678
                 </a>
             </div>
@@ -1157,7 +1140,7 @@
     <footer>
         <p>&copy; 2026 <span>GOLDENS BARBEARIA</span>. Todos os direitos reservados.</p>
         <p class="creator-credit">
-            Criado por <span>vyro dev</span> • <a href="https://wa.me/5511946453542" target="_blank">11 94645-3542</a>
+            Criado por <span>vyro dev</span> • <a href="https://wa.me/5511946453542?text=Oi!%20Vi%20seu%20trabalho%20no%20site%20da%20Goldens%20Barbearia%20e%20quero%20fazer%20um%20or%C3%A7amento." target="_blank">11 94645-3542</a>
         </p>
     </footer>
 
@@ -1189,17 +1172,13 @@
                 services: [],
                 dateText: "",
                 time: "",
-                clientName: "",
-                clientPhone: "",
-                clientNotes: ""
+                clientName: ""
             };
 
             const serviceCards = document.querySelectorAll('.service-option');
             const datesContainer = document.getElementById('dates-container');
             const timesContainer = document.getElementById('times-container');
             const clientNameInput = document.getElementById('client-name');
-            const clientPhoneInput = document.getElementById('client-phone');
-            const clientNotesInput = document.getElementById('client-notes');
 
             const summaryDate = document.getElementById('summary-date');
             const summaryTime = document.getElementById('summary-time');
@@ -1304,25 +1283,9 @@
                 });
             });
 
-            clientPhoneInput.addEventListener('input', (e) => {
-                let v = e.target.value.replace(/\D/g, '').slice(0, 11);
-                if (v.length > 6) {
-                    v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
-                } else if (v.length > 2) {
-                    v = `(${v.slice(0,2)}) ${v.slice(2)}`;
-                }
-                e.target.value = v;
-                state.clientPhone = v;
-                updateSummary();
-            });
-
             clientNameInput.addEventListener('input', (e) => {
                 state.clientName = e.target.value.trim();
                 updateSummary();
-            });
-
-            clientNotesInput.addEventListener('input', (e) => {
-                state.clientNotes = e.target.value.trim();
             });
 
             function updateSummary() {
@@ -1344,15 +1307,15 @@
                 summaryDuration.textContent = `${totalDuration} min`;
                 summaryTotal.textContent = formattedTotal;
 
-                const isValid = state.services.length > 0 && state.dateText && state.time && state.clientName.length >= 2 && state.clientPhone.length >= 13;
+                const isValid = state.services.length > 0 && state.dateText && state.time && state.clientName.length >= 2;
                 btnConfirm.disabled = !isValid;
 
                 if (state.services.length === 0) {
                     feedbackEl.textContent = 'Selecione pelo menos 1 serviço.';
                 } else if (!state.time) {
                     feedbackEl.textContent = 'Escolha um horário disponível.';
-                } else if (state.clientName.length < 2 || state.clientPhone.length < 13) {
-                    feedbackEl.textContent = 'Preencha seu nome e WhatsApp para confirmar.';
+                } else if (state.clientName.length < 2) {
+                    feedbackEl.textContent = 'Preencha seu nome para confirmar.';
                 } else {
                     feedbackEl.textContent = '';
                 }
@@ -1364,15 +1327,10 @@
 
                 let msg = `*NOVO AGENDAMENTO - GOLDENS BARBEARIA*\n\n`;
                 msg += `*Cliente:* ${state.clientName}\n`;
-                msg += `*Contato:* ${state.clientPhone}\n`;
                 msg += `*Data:* ${state.dateText}\n`;
                 msg += `*Horário:* ${state.time}\n\n`;
                 msg += `*Serviços Escolhidos:*\n${listaServicos}\n\n`;
                 msg += `*Valor Estimado:* R$ ${total.toFixed(2).replace('.', ',')}`;
-
-                if (state.clientNotes) {
-                    msg += `\n*Obs:* ${state.clientNotes}`;
-                }
 
                 const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
                 window.open(url, '_blank');
