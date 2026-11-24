@@ -467,16 +467,11 @@
             color: var(--color-ice-white);
         }
 
-        .summary-meta-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
         .summary-row {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            margin-bottom: 8px;
             font-size: 0.84rem;
         }
 
@@ -487,7 +482,7 @@
         .summary-row strong {
             color: var(--color-ice-white);
             text-align: right;
-            max-width: 65%;
+            max-width: 62%;
         }
 
         .summary-services-list {
@@ -711,12 +706,12 @@
             font-weight: 700;
         }
 
-        /* MOBILE: MAIS LARGO NOS BOTÕES E MAIS CURTO NA ALTURA */
+        /* MOBILE */
         @media (max-width: 920px) {
             .booking-wrapper {
                 grid-template-columns: 1fr;
-                padding: 12px;
-                gap: 12px;
+                padding: 10px;
+                gap: 8px;
             }
             .booking-summary {
                 position: static;
@@ -787,227 +782,190 @@
                 font-size: 1.45rem;
             }
 
-            /* AGENDAMENTO MOBILE: MAIS CURTO E MAIS LARGO */
+            /* AGENDAMENTO MOBILE: CURTO NA ALTURA E LARGO NAS COLUNAS */
             #agendamento.section-container {
-                padding: 14px 6px;
+                padding: 10px 4px;
             }
 
             #agendamento .section-title {
-                margin-bottom: 8px;
+                margin-bottom: 6px;
             }
 
             #agendamento .section-title h2 {
-                font-size: 1.2rem;
-                margin-bottom: 2px;
+                font-size: 1.12rem;
+                margin-bottom: 1px;
             }
 
             #agendamento .section-title p {
-                font-size: 0.72rem;
+                font-size: 0.68rem;
             }
 
             .booking-wrapper {
-                padding: 10px 8px;
-                gap: 8px;
-                border-radius: 12px;
+                padding: 8px 6px;
+                gap: 6px;
+                border-radius: 10px;
             }
 
             .booking-step {
-                margin-bottom: 8px;
+                margin-bottom: 6px;
             }
 
             .step-header {
-                gap: 6px;
-                margin-bottom: 5px;
+                gap: 5px;
+                margin-bottom: 4px;
             }
 
             .step-number {
-                width: 19px;
-                height: 19px;
-                font-size: 0.7rem;
+                width: 16px;
+                height: 16px;
+                font-size: 0.64rem;
             }
 
             .step-header h3 {
-                font-size: 0.84rem;
+                font-size: 0.78rem;
             }
 
-            /* Serviços largos em 2 colunas, altura enxuta */
             .booking-services-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 6px;
+                gap: 4px;
             }
 
             .service-option {
-                padding: 6px 10px;
-                min-height: 34px;
-                border-radius: 8px;
-                gap: 6px;
+                padding: 4px 8px;
+                min-height: 28px;
+                border-radius: 6px;
+                gap: 4px;
             }
 
             .service-option-info h4 {
-                font-size: 0.76rem;
-                line-height: 1.15;
+                font-size: 0.72rem;
+                line-height: 1.1;
             }
 
             .service-option-price {
-                font-size: 0.76rem;
+                font-size: 0.72rem;
                 margin-left: 0;
             }
 
-            /* Datas largas na horizontal, altura baixa */
             .dates-scroller {
-                gap: 6px;
-                margin-bottom: 6px;
-                padding-bottom: 3px;
+                gap: 4px;
+                margin-bottom: 4px;
+                padding-bottom: 2px;
             }
 
             .date-pill {
-                min-width: 62px;
-                padding: 5px 8px;
-                border-radius: 8px;
+                min-width: 58px;
+                padding: 3px 6px;
+                border-radius: 6px;
             }
 
             .date-pill .day-name {
-                font-size: 0.62rem;
+                font-size: 0.56rem;
+                line-height: 1.1;
             }
 
             .date-pill .day-num {
-                font-size: 0.84rem;
-                margin-top: 1px;
+                font-size: 0.76rem;
+                line-height: 1.15;
+                margin-top: 0;
             }
 
-            /* Horários mais largos (5 colunas em vez de 7 apertadas) e altura enxuta */
             .times-grid {
                 grid-template-columns: repeat(5, 1fr);
-                gap: 5px;
+                gap: 4px;
             }
 
             .time-slot {
-                padding: 5px 4px;
-                min-height: 28px;
-                font-size: 0.74rem;
-                border-radius: 7px;
+                padding: 3px 2px;
+                min-height: 23px;
+                height: 23px;
+                font-size: 0.7rem;
+                border-radius: 6px;
+                line-height: 1;
             }
 
-            /* Inputs largos lado a lado */
             .client-inputs {
-                grid-template-columns: 1fr 1fr;
-                gap: 6px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
             }
 
             .input-group {
-                gap: 2px;
+                gap: 1px;
             }
 
             .input-group label {
-                font-size: 0.66rem;
+                font-size: 0.62rem;
+                line-height: 1.1;
             }
 
             .input-group input {
-                padding: 6px 9px;
-                font-size: 13px;
-                border-radius: 7px;
-                height: 32px;
+                padding: 4px 7px;
+                font-size: 12px;
+                border-radius: 6px;
+                height: 26px;
+                min-height: 26px;
             }
 
-            /* Resumo horizontal e compacto (economiza muita altura) */
             .booking-summary {
-                padding: 8px 10px;
-                border-radius: 10px;
+                padding: 6px 8px;
+                border-radius: 8px;
             }
 
             .booking-summary h3 {
                 display: none;
             }
 
-            .summary-meta-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 6px;
-                margin-bottom: 6px;
-            }
-
             .summary-row {
-                flex-direction: column;
-                align-items: flex-start;
-                background: rgba(34, 34, 34, 0.65);
-                padding: 5px 7px;
-                border-radius: 6px;
-                font-size: 0.68rem;
-                margin-bottom: 0;
-            }
-
-            .summary-row strong {
-                text-align: left;
-                max-width: 100%;
-                font-size: 0.74rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: 100%;
-            }
-
-            .summary-services-list {
-                padding: 5px 8px;
-                margin: 0 0 6px;
-                min-height: 24px;
-                border-radius: 6px;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 4px 10px;
-                align-items: center;
-            }
-
-            .summary-services-list p {
-                font-size: 0.68rem;
-            }
-
-            .summary-service-item {
-                font-size: 0.72rem;
-                margin-bottom: 0;
-                gap: 5px;
-            }
-
-            .summary-footer-row {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 10px;
-                border-top: 1px solid rgba(156, 141, 92, 0.25);
-                padding-top: 6px;
-            }
-
-            .summary-total-box {
-                border-top: none;
-                padding-top: 0;
-                margin-bottom: 0;
-                flex-direction: column;
-                align-items: flex-start;
-                flex-shrink: 0;
-            }
-
-            .summary-total-box span {
+                margin-bottom: 2px;
                 font-size: 0.66rem;
-                line-height: 1;
-            }
-
-            .summary-total-box strong {
-                font-size: 1.05rem;
                 line-height: 1.2;
             }
 
+            .summary-services-list {
+                padding: 4px 6px;
+                margin: 4px 0;
+                min-height: 20px;
+                border-radius: 6px;
+            }
+
+            .summary-services-list p {
+                font-size: 0.64rem;
+                line-height: 1.15;
+            }
+
+            .summary-service-item {
+                font-size: 0.68rem;
+                margin-bottom: 1px;
+                line-height: 1.15;
+            }
+
+            .summary-total-box {
+                padding-top: 4px;
+                margin-bottom: 5px;
+            }
+
+            .summary-total-box span {
+                font-size: 0.68rem;
+            }
+
+            .summary-total-box strong {
+                font-size: 0.96rem;
+            }
+
             .btn-confirm-booking {
-                flex: 1;
-                padding: 8px 12px;
-                min-height: 36px;
-                font-size: 0.8rem;
-                border-radius: 8px;
-                gap: 6px;
+                padding: 5px 8px;
+                min-height: 30px;
+                height: 30px;
+                font-size: 0.74rem;
+                border-radius: 6px;
+                gap: 5px;
             }
 
             .booking-feedback {
-                margin-top: 4px;
-                font-size: 0.66rem;
-                min-height: 12px;
+                margin-top: 2px;
+                font-size: 0.62rem;
+                min-height: 10px;
+                line-height: 1.1;
             }
 
             .contact-card {
@@ -1180,21 +1138,19 @@
                 <div>
                     <h3>Resumo</h3>
 
-                    <div class="summary-meta-grid">
-                        <div class="summary-row">
-                            <span>Data</span>
-                            <strong id="summary-date">Selecione</strong>
-                        </div>
+                    <div class="summary-row">
+                        <span>Data:</span>
+                        <strong id="summary-date">Selecione um dia</strong>
+                    </div>
 
-                        <div class="summary-row">
-                            <span>Horário</span>
-                            <strong id="summary-time">--:--</strong>
-                        </div>
+                    <div class="summary-row">
+                        <span>Horário:</span>
+                        <strong id="summary-time">Selecione um horário</strong>
+                    </div>
 
-                        <div class="summary-row">
-                            <span>Duração</span>
-                            <strong id="summary-duration">0 min</strong>
-                        </div>
+                    <div class="summary-row">
+                        <span>Duração:</span>
+                        <strong id="summary-duration">0 min</strong>
                     </div>
 
                     <div class="summary-services-list" id="summary-services">
@@ -1203,16 +1159,14 @@
                 </div>
 
                 <div>
-                    <div class="summary-footer-row">
-                        <div class="summary-total-box">
-                            <span>Total</span>
-                            <strong id="summary-total">R$ 0,00</strong>
-                        </div>
-
-                        <button type="button" id="btn-confirm-booking" class="btn-confirm-booking" disabled>
-                            <i class="fa-brands fa-whatsapp"></i> Confirmar
-                        </button>
+                    <div class="summary-total-box">
+                        <span>Total:</span>
+                        <strong id="summary-total">R$ 0,00</strong>
                     </div>
+
+                    <button type="button" id="btn-confirm-booking" class="btn-confirm-booking" disabled>
+                        <i class="fa-brands fa-whatsapp"></i> Confirmar no WhatsApp
+                    </button>
                     <div class="booking-feedback" id="booking-feedback"></div>
                 </div>
             </div>
@@ -1371,21 +1325,21 @@
                     const dayName = generatedDays === 0 ? 'Hoje' : diasSemana[dateObj.getDay()];
                     const dayNum = String(dateObj.getDate()).padStart(2, '0');
                     const monthName = meses[dateObj.getMonth()];
-                    const fullDateLabel = `${dayName}, ${dayNum}/${String(dateObj.getMonth() + 1).padStart(2, '0')}`;
+                    const fullDateLabel = `${dayName}, ${dayNum} de ${monthName}`;
 
                     const pill = document.createElement('div');
                     pill.className = 'date-pill' + (generatedDays === 0 ? ' selected' : '');
                     pill.innerHTML = `<span class="day-name">${dayName}</span><span class="day-num">${dayNum}/${String(dateObj.getMonth() + 1).padStart(2, '0')}</span>`;
 
                     if (generatedDays === 0) {
-                        state.dateText = `${dayName}, ${dayNum} de ${monthName}`;
+                        state.dateText = fullDateLabel;
                         summaryDate.textContent = fullDateLabel;
                     }
 
                     pill.addEventListener('click', () => {
                         document.querySelectorAll('.date-pill').forEach(p => p.classList.remove('selected'));
                         pill.classList.add('selected');
-                        state.dateText = `${dayName}, ${dayNum} de ${monthName}`;
+                        state.dateText = fullDateLabel;
                         summaryDate.textContent = fullDateLabel;
                         renderTimes(dayName === 'Hoje');
                     });
@@ -1399,7 +1353,7 @@
             function renderTimes(isToday) {
                 timesContainer.innerHTML = '';
                 state.time = '';
-                summaryTime.textContent = '--:--';
+                summaryTime.textContent = 'Selecione um horário';
                 updateSummary();
 
                 const slots = [
